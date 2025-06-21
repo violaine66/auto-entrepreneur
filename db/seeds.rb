@@ -11,6 +11,7 @@
 
 User.destroy_all
 User.create!(
-  email: ENV.fetch("ADMIN_NOM"),
+  email: ENV.fetch("ADMIN_EMAIL"),
+  nom: ENV.fetch("ADMIN_NOM"),
   password: ENV.fetch("ADMIN_PASSWORD"),
 )
