@@ -1,4 +1,5 @@
 class DossiersController < ApplicationController
   def index
-    @dossiers = current_user.dossiers
+    @dossiers = Dossier.all
+  end
 end
