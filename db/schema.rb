@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_21_110559) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_21_145250) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dossiers", force: :cascade do |t|
+    t.string "nomClient"
+    t.string "objetMission"
+    t.string "localisation"
+    t.float "propositionHonoraire"
+    t.date "dateAcceptation"
+    t.text "etatAvancement"
+    t.string "etapeFacturation"
+    t.date "dateReglement"
+    t.string "modeReglement"
+    t.boolean "clotureDossier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
