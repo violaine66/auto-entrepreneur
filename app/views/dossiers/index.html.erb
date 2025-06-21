@@ -13,9 +13,9 @@
             <tbody>
              <% @dossiers.each do |d| %>
              <tr>
-              <td><%= d.nomClient %></td>
-              <td> <%= d.objetMission %></td>
-              <td><%= d.localisation %></td>
+              <td> <%= link_to d.nomClient, dossier_path(d), class:"text-decoration-none text-dark" %></td>
+              <td> <%= link_to d.objetMission, dossier_path(d), class:"text-decoration-none text-dark" %></td>
+              <td><%= link_to d.localisation, dossier_path(d), class:"text-decoration-none text-dark"%></td>
              </tr>
              <% end %>
             </tbody>
