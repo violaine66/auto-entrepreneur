@@ -1,9 +1,20 @@
+<%= render "shared/navbar" %>
 <div class="container mt-5">
   <div class="row">
     <div class="col">
-      <p> Objet de la mission : <%= @dossier.objetMission %></p>
-      <p> Nom du client : <%= @dossier.nomClient %></p>
-      <p> Localisation : <%= @dossier.localisation %></p>
+      <div class="titre-dossier">
+        <p class="objet"> <strong><%= @dossier.objetMission %></strong>
+          <% if @dossier.clotureDossier? %>
+                  <span class="badge bg-success ms-2 fs-6"> Terminé </span>
+            <% else %>
+                  <span class="badge bg-danger ms-2 fs-6"> En cours </span>
+          <% end%>
+        </p>
+        <p class="client"> pour <strong><%= @dossier.nomClient %></strong></p>
+        <p class= "lieu"> <em><%= @dossier.localisation %></em> </p>
+      </div>
+
+
       <p> Proposition d'honoraire : <%= @dossier.propositionHonoraire %></p>
       <p>Date d'acceptation : <%= @dossier.dateAcceptation.strftime("%d/%m/%Y")%></p>
       <% if @dossier.clotureDossier? %>
