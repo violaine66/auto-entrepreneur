@@ -5,7 +5,7 @@
       <p> Nom du client : <%= @dossier.nomClient %></p>
       <p> Localisation : <%= @dossier.localisation %></p>
       <p> Proposition d'honoraire : <%= @dossier.propositionHonoraire %></p>
-      <p>Date d'acceptation : <%= @dossier.dateAcceptation%></p>
+      <p>Date d'acceptation : <%= @dossier.dateAcceptation.strftime("%d/%m/%Y")%></p>
       <% if @dossier.clotureDossier? %>
         <p>Etat d'avancement du projet :<span class="badge bg-success me-2">Terminé</p>
       <% else %>
@@ -14,7 +14,7 @@
       </p>
       <% end %>
       <p>Etapes de la facturation : <%= @dossier.etapeFacturation %></p>
-      <p>Date du réglement : <%= @dossier.dateReglement %></p>
+      <p>Date du réglement : <%= @dossier.dateReglement.strftime("%d/%m/%Y") %></p>
       <p>mode de réglement : <%= @dossier.modeReglement %></p>
     </div>
   </div>
