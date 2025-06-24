@@ -1,6 +1,11 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col">
+      <%= link_to "Modifier le dossier", edit_dossier_path %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
       <p> Objet de la mission : <%= @dossier.objetMission %></p>
       <p> Nom du client : <%= @dossier.nomClient %></p>
       <p> Localisation : <%= @dossier.localisation %></p>

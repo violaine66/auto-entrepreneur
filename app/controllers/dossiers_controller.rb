@@ -36,7 +36,11 @@ class DossiersController < ApplicationController
     end
   end
 
-  
+  def destroy
+    @dossier = Dossier.find(params[:id])
+    @dossier.destroy
+    redirect_to dossiers_path, notice: 'Dossier supprimé avec succès.'
+  end
 
   private
   def dossier_params
