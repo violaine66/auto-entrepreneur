@@ -1,12 +1,6 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col">
-      <p><%= link_to "Modifier le dossier", edit_dossier_path %></p>
-      <p><%= link_to "Supprimer le dossier", dossier_path, data: { turbo_method: :delete, turbo_confirm: "Supprimer?" } %></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
       <p> Objet de la mission : <%= @dossier.objetMission %></p>
       <p> Nom du client : <%= @dossier.nomClient %></p>
       <p> Localisation : <%= @dossier.localisation %></p>
@@ -22,6 +16,12 @@
       <p>Etapes de la facturation : <%= @dossier.etapeFacturation %></p>
       <p>Date du réglement : <%= @dossier.dateReglement %></p>
       <p>mode de réglement : <%= @dossier.modeReglement %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <p><%= link_to "Modifier le dossier", edit_dossier_path, class:"me-3" %></p>
+      <p><%= link_to "Supprimer le dossier", dossier_path, data: { turbo_method: :delete, turbo_confirm: "Supprimer?" } %></p>
     </div>
   </div>
 </div>
