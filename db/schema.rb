@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_21_154921) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_24_064218) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_21_154921) do
     t.string "etapeFacturation"
     t.date "dateReglement"
     t.string "modeReglement"
-    t.boolean "clotureDossier"
+    t.boolean "clotureDossier", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

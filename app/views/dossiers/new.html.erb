@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="new-dossier">
+        <%= simple_form_for(@dossier) do |d| %>
+        <%= d.input :nomClient, label: "Nom du client"%>
+        <%= d.input :objetMission, label: "Objet de la mission "%>
+        <%= d.input :localisation, label: "Localisation" %>
+        <%= d.input :propositionHonoraire, label: "Proposition d'honoraire" %>
+        <%= d.button :submit, "Créer le dossier", class: "btn btn-primary"%>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
