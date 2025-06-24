@@ -16,7 +16,9 @@
         </div>
         <div class="facturation d-flex justify-content-around my-3">
           <p class="mt-3"> <strong>Proposition d'honoraire : </strong><%= @dossier.propositionHonoraire %>€</p>
-          <p class="mt-3"><strong>Date d'acceptation :</strong> <%= @dossier.dateAcceptation.strftime("%d/%m/%Y")%></p>
+          <% if @dossier.dateAcceptation.present?%>
+            <p class="mt-3"><strong>Date d'acceptation :</strong> <%= @dossier.dateAcceptation.strftime("%d/%m/%Y")%></p>
+          <% end %>
           <p class="mt-3"><strong>Etapes de la facturation : </strong><%= @dossier.etapeFacturation %></p>
         </div>
         <div class="avancement-paiement">
@@ -25,7 +27,9 @@
             <p><%= @dossier.etatAvancement %></p>
           </div>
             <div class="paiement mt-3">
-              <p><strong>Date du réglement : </strong><%= @dossier.dateReglement.strftime("%d/%m/%Y") %></p>
+              <% if @dossier.dateReglement.present?%>
+                <p><strong>Date du réglement : </strong><%= @dossier.dateReglement.strftime("%d/%m/%Y") %></p>
+              <% end %>
               <p><strong>Mode de réglement :</strong> <%= @dossier.modeReglement %></p>
             </div>
         </div>
