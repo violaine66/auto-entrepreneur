@@ -24,7 +24,7 @@
                 <td><span class="badge bg-danger me-2"> En cours </span><%= link_to d.objetMission, dossier_path(d), class:"text-decoration-none text-dark" %></td>
               <% end %>
               <td> <%= link_to d.nomClient, dossier_path(d), class:"text-decoration-none text-dark" %></td>
-              <td><%= link_to d.localisation, dossier_path(d), class:"text-decoration-none text-dark"%></td>
+              <td><%= link_to d.localisation, dossier_path(d), class:"text-decoration-none text-dark"%> <%= link_to "Modifier", edit_dossier_path(d) %></td>
              </tr>
              <% end %>
             </tbody>

@@ -22,6 +22,22 @@ class DossiersController < ApplicationController
     end
   end
 
+  def edit
+    @dossier = Dossier.find(params[:id])
+  end
+
+  def update
+    @dossier = Dossier.find(params[:id])
+
+    if @dossier.update(dossier_params)
+      redirect_to @dossier, notice: 'Dossier mis à jour avec succès.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  
+
   private
   def dossier_params
     params.require(:dossier).permit(

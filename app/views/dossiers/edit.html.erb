@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="new-dossier">
+        <%= simple_form_for(@dossier) do |d| %>
+        <%= d.input :nomClient, label: "Nom du client"%>
+        <%= d.input :objetMission, label: "Objet de la mission "%>
+        <%= d.input :localisation, label: "Localisation" %>
+        <%= d.input :propositionHonoraire, label: "Proposition d'honoraire" %>
+        <%= d.input :dateAcceptation, label: "Date d'acceptation"%>
+        <%= d.input :etatAvancement, label: "Etat d'avancement"%>
+        <%= d.input :etapeFacturation, label: "Etape de la facturation"%>
+        <%= d.input :dateReglement, label: "Date du réglement" %>
+        <%= d.input :modeReglement, label: "Mode de réglement"%>
+        <%= d.input :clotureDossier, as: :boolean, label: "Dossier clôturé", input_html: { class: "form-check-input" }%>
+        <%= d.button :submit, "Mettre à jour le dossier", class: "btn btn-primary"%>
+        <%= link_to "Annuler", dossiers_path %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
