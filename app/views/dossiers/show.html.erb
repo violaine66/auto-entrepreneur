@@ -1,57 +1,60 @@
 <%= render "shared/navbar" %>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col">
-      <div class="titre-dossier">
-        <p class="objet"> <strong><%= @dossier.objetMission %></strong>
-          <% if @dossier.clotureDossier? %>
-                  <span class="badge bg-success ms-2 fs-6"> Terminé </span>
-            <% else %>
-                  <span class="badge bg-danger ms-2 fs-6"> En cours </span>
-          <% end%>
-        </p>
-        <p class="client"><em>pour </em><strong><%= @dossier.nomClient %></strong></p>
-        <p class= "lieu"> <i class="fa-solid fa-location-dot me-2 text-white"></i><em><strong><%= @dossier.localisation %></strong></em> </p>
-      </div>
-      <div class="facturation d-flex justify-content-around my-3">
-        <p class="mt-3"> <strong>Proposition d'honoraire : </strong><%= @dossier.propositionHonoraire %>€</p>
-        <p class="mt-3"><strong>Date d'acceptation :</strong> <%= @dossier.dateAcceptation.strftime("%d/%m/%Y")%></p>
-        <p class="mt-3"><strong>Etapes de la facturation : </strong><%= @dossier.etapeFacturation %></p>
-      </div>
-      <div class="avancement-paiement">
-        <div class="avancement mt-3">
-          <p><strong>Etat d'avancement du projet </strong>
-          <p><%= @dossier.etatAvancement %></p>
+<div class="show-container">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+        <div class="titre-dossier mt-2">
+          <p class="objet"> <strong><%= @dossier.objetMission %></strong>
+            <% if @dossier.clotureDossier? %>
+                    <span class="badge bg-success ms-2 fs-6"> Terminé </span>
+              <% else %>
+                    <span class="badge bg-danger ms-2 fs-6"> En cours </span>
+            <% end%>
+          </p>
+          <p class="client"><em>pour </em><strong><%= @dossier.nomClient %></strong></p>
+          <p class= "lieu"> <i class="fa-solid fa-location-dot me-2 text-white"></i><em><strong><%= @dossier.localisation %></strong></em> </p>
         </div>
-          <div class="paiement mt-3">
-            <p><strong>Date du réglement : </strong><%= @dossier.dateReglement.strftime("%d/%m/%Y") %></p>
-            <p><strong>Mode de réglement :</strong> <%= @dossier.modeReglement %></p>
+        <div class="facturation d-flex justify-content-around my-3">
+          <p class="mt-3"> <strong>Proposition d'honoraire : </strong><%= @dossier.propositionHonoraire %>€</p>
+          <p class="mt-3"><strong>Date d'acceptation :</strong> <%= @dossier.dateAcceptation.strftime("%d/%m/%Y")%></p>
+          <p class="mt-3"><strong>Etapes de la facturation : </strong><%= @dossier.etapeFacturation %></p>
+        </div>
+        <div class="avancement-paiement">
+          <div class="avancement mt-3">
+            <p><strong>Etat d'avancement du projet </strong>
+            <p><%= @dossier.etatAvancement %></p>
           </div>
+            <div class="paiement mt-3">
+              <p><strong>Date du réglement : </strong><%= @dossier.dateReglement.strftime("%d/%m/%Y") %></p>
+              <p><strong>Mode de réglement :</strong> <%= @dossier.modeReglement %></p>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row mt-5 link">
-    <div class="col links d-flex justify-content-center gap-4">
-      <span class="back"><%= link_to image_tag('back.png'), dossiers_path  %></span>
-      <%= link_to edit_dossier_path, class: "icon-link" do %>
-        <i class="fa-solid fa-pen-to-square fs-3 text-decoration-none "></i>
-      <% end %>
-      <%= form_with url: dossier_path(@dossier), method: :delete,
-                    data: {
-                      controller: "alert",
-                      alert_icon_value: "warning",
-                      alert_title_value: "Êtes-vous sûr ?",
-                      alert_html_value: "Cette action est irréversible.",
-                      alert_confirm_button_text_value: "Oui, supprimer",
-                      alert_cancel_button_text_value: "Annuler",
-                      alert_show_cancel_button_value: true,
-                      turbo: false,
-                      action: "submit->alert#initSweetalert"
-                    }, class: "d-inline icon-link" do %>
-        <button type="submit" class="btn btn-link p-0 m-0">
-          <i class="fa-solid fa-trash fs-3 text-decoration-none "></i>
-        </button>
-      <% end %>
+    <div class="row mt-4 link">
+      <div class="col links d-flex justify-content-center gap-4">
+
+        <%= link_to edit_dossier_path, class: "icon-link" do %>
+          <i class="fa-solid fa-pen-to-square fs-3 text-decoration-none "></i>
+        <% end %>
+        <%= form_with url: dossier_path(@dossier), method: :delete,
+                      data: {
+                        controller: "alert",
+                        alert_icon_value: "warning",
+                        alert_title_value: "Êtes-vous sûr ?",
+                        alert_html_value: "Cette action est irréversible.",
+                        alert_confirm_button_text_value: "Oui, supprimer",
+                        alert_cancel_button_text_value: "Annuler",
+                        alert_show_cancel_button_value: true,
+                        turbo: false,
+                        action: "submit->alert#initSweetalert"
+                      }, class: "d-inline icon-link" do %>
+          <button type="submit" class="btn btn-link p-0 m-0">
+            <i class="fa-solid fa-trash fs-3 text-decoration-none "></i>
+          </button>
+        <% end %>
+      </div>
     </div>
+      <span class="back"><%= link_to image_tag('back.png'), dossiers_path  %></span>
   </div>
 </div>
