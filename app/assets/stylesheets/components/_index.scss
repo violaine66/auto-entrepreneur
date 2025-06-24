@@ -7,3 +7,22 @@
 @import "connexion";
 @import "show_dossier";
 @import "edit_dossier";
+
+.btn-add {
+  background-color: #BFBEC5;
+  color:white;
+  padding: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.table-bordered {
+  border-radius: 8px;
+}
+
+
+.index-container {
+  height:calc(100vh - 91px);
+  background-color: #515151;
+  margin:0;
+}

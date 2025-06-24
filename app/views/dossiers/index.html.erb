@@ -1,55 +1,56 @@
 <%= render "shared/navbar" %>
-<div class="container mt-5">
-  <div class="row ">
-    <div class="col d-flex justify-content-end mb-5">
-      <%= link_to "Nouveau dossier", new_dossier_path, class:'text-dark text-decoration-none' %>
+<div class="index-container">
+  <div class="container">
+    <div class="row ">
+      <div class="col d-flex justify-content-end">
+        <%= link_to "Nouveau dossier", new_dossier_path, class:"btn-add my-3" %>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-       <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead>
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>MISSION</th>
+                  <th> CLIENT</th>
+                  <th>LOCALISATION</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @dossiers.each do |d| %>
               <tr>
-                <th>MISSION</th>
-                <th> CLIENT</th>
-                <th>LOCALISATION</th>
-              </tr>
-            </thead>
-            <tbody>
-             <% @dossiers.each do |d| %>
-             <tr>
-              <% if d.clotureDossier? %>
-                <td><span class="badge bg-success me-2"> Terminé </span><%= link_to d.objetMission, dossier_path(d), class:"text-decoration-none text-dark" %></td>
-              <% else %>
-                <td><span class="badge bg-danger me-2"> En cours </span><%= link_to d.objetMission, dossier_path(d), class:"text-decoration-none text-dark" %></td>
-              <% end %>
-              <td> <%= link_to d.nomClient, dossier_path(d), class:"text-decoration-none text-dark" %></td>
-              <td>
-                <%= link_to d.localisation, dossier_path(d), class:"text-decoration-none text-dark"%>
-                <%= link_to "Modifier", edit_dossier_path(d) %>
-
-                <%= form_with url: dossier_path(d), method: :delete,
-                      data: {
-                        controller: "alert",
-                        alert_icon_value: "warning",
-                        alert_title_value: "Êtes-vous sûr ?",
-                        alert_html_value: "Cette action est irréversible.",
-                        alert_confirm_button_text_value: "Oui, supprimer",
-                        alert_cancel_button_text_value: "Annuler",
-                        alert_show_cancel_button_value: true,
-                        turbo: false,
-                        action: "submit->alert#initSweetalert"
-                      }, class: "d-inline" do %>
-                  <%= submit_tag "Supprimer" %>
+                <% if d.clotureDossier? %>
+                  <td><span class="badge bg-success me-2"> Terminé </span><%= link_to d.objetMission, dossier_path(d), class:"text-decoration-none text-dark" %></td>
+                <% else %>
+                  <td><span class="badge bg-danger me-2"> En cours </span><%= link_to d.objetMission, dossier_path(d), class:"text-decoration-none text-dark" %></td>
                 <% end %>
-
-              </td>
-             </tr>
-             <% end %>
-            </tbody>
-          </table>
+                <td> <%= link_to d.nomClient, dossier_path(d), class:"text-decoration-none text-dark" %></td>
+                <td class="d-flex justify-content-between">
+                  <span><%= link_to d.localisation, dossier_path(d), class:"text-decoration-none text-dark"%></span>
+                  <span><%= link_to "Modifier", edit_dossier_path(d), class:"text-decoration-none badge rounded-pill bg-secondary text-white" %>
+                  <%= form_with url: dossier_path(d), method: :delete,
+                        data: {
+                          controller: "alert",
+                          alert_icon_value: "warning",
+                          alert_title_value: "Êtes-vous sûr ?",
+                          alert_html_value: "Cette action est irréversible.",
+                          alert_confirm_button_text_value: "Oui, supprimer",
+                          alert_cancel_button_text_value: "Annuler",
+                          alert_show_cancel_button_value: true,
+                          turbo: false,
+                          action: "submit->alert#initSweetalert"
+                        }, class: "d-inline " do %>
+                    <%= button_tag "Supprimer", class:"badge rounded-pill bg-secondary text-white" %>
+                  <% end %>
+                  </span>
+                </td>
+              </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
-       </div>
-    </div>
+      </div>
   </div>
+</div>
