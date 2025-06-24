@@ -44,7 +44,7 @@ Dossier.create!([
     etapeFacturation: "Solde",
     dateReglement: Date.new(2024, 5, 10),
     modeReglement: "Chèque",
-    clotureDossier: false,
+    clotureDossier: true,
     user: User.first
   },
   {
