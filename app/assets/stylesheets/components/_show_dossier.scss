@@ -1,8 +1,12 @@
 .titre-dossier {
-  border: 1px solid gray;
+  // border: 1px solid gray;
   text-align: center;
   border-radius: 6px;
+  background-color: #696773;
+  color:white;
+
   padding: 20px;
+  // background-color: #f5f5f5;
 }
 
 .objet, .client {
@@ -19,6 +23,7 @@
   border: 1px solid grey;
   border-radius: 6px;
   align-items: center;
+  background-color: #f5f5f5;
 }
 
 .avancement-paiement {
@@ -28,12 +33,14 @@
   width: 100%;
   border: 1px solid gray;
   border-radius: 6px;
+  background-color: #f5f5f5;
 }
 
 .avancement {
   width: 50%;
 }
 
-.col a {
+.col a, .col i {
   text-decoration: none;
+  color:#696773;
 }

@@ -30,11 +30,11 @@
       </div>
     </div>
   </div>
-  <div class="row mt-3">
+  <div class="row mt-3 link">
      <%= link_to image_tag('back.png'), dossiers_path %>
     <div class="col d-flex justify-content-center gap-4">
       <%= link_to edit_dossier_path, class: "icon-link" do %>
-        <i class="fa-solid fa-pen-to-square fs-3 text-decoration-none text-dark"></i>
+        <i class="fa-solid fa-pen-to-square fs-3 text-decoration-none "></i>
       <% end %>
       <%= form_with url: dossier_path(@dossier), method: :delete,
                     data: {
@@ -49,7 +49,7 @@
                       action: "submit->alert#initSweetalert"
                     }, class: "d-inline icon-link" do %>
         <button type="submit" class="btn btn-link p-0 m-0">
-          <i class="fa-solid fa-trash fs-3 text-decoration-none text-dark"></i>
+          <i class="fa-solid fa-trash fs-3 text-decoration-none "></i>
         </button>
       <% end %>
     </div>
