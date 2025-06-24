@@ -21,7 +21,21 @@
   <div class="row">
     <div class="col d-flex justify-content-center">
       <p><%= link_to "Modifier le dossier", edit_dossier_path, class:"me-3" %></p>
-      <p><%= link_to "Supprimer le dossier", dossier_path, data: { turbo_method: :delete, turbo_confirm: "Supprimer?" } %></p>
+      <p> <%= form_with url: dossier_path, method: :delete,
+                      data: {
+                        controller: "alert",
+                        alert_icon_value: "warning",
+                        alert_title_value: "Êtes-vous sûr ?",
+                        alert_html_value: "Cette action est irréversible.",
+                        alert_confirm_button_text_value: "Oui, supprimer",
+                        alert_cancel_button_text_value: "Annuler",
+                        alert_show_cancel_button_value: true,
+                        turbo: false,
+                        action: "submit->alert#initSweetalert"
+                      }, class: "d-inline" do %>
+                  <%= submit_tag "Supprimer", class: "btn btn-sm" %>
+          <% end %>
+      </p>
     </div>
   </div>
 </div>

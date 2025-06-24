@@ -27,7 +27,22 @@
               <td>
                 <%= link_to d.localisation, dossier_path(d), class:"text-decoration-none text-dark"%>
                 <%= link_to "Modifier", edit_dossier_path(d) %>
-                <%= link_to "supprimer", dossier_path(d), data: { turbo_method: :delete, turbo_confirm: "Supprimer?" } %>
+
+                <%= form_with url: dossier_path(d), method: :delete,
+                      data: {
+                        controller: "alert",
+                        alert_icon_value: "warning",
+                        alert_title_value: "Êtes-vous sûr ?",
+                        alert_html_value: "Cette action est irréversible.",
+                        alert_confirm_button_text_value: "Oui, supprimer",
+                        alert_cancel_button_text_value: "Annuler",
+                        alert_show_cancel_button_value: true,
+                        turbo: false,
+                        action: "submit->alert#initSweetalert"
+                      }, class: "d-inline" do %>
+                  <%= submit_tag "Supprimer" %>
+                <% end %>
+
               </td>
              </tr>
              <% end %>
