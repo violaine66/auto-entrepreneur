@@ -1,14 +1,21 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col">
-      <p><%= @dossier.objetMission %></p>
-      <p><%= @dossier.nomClient %></p>
-      <p><%= @dossier.localisation %></p>
-      <p><%= @dossier.propositionHonoraire %></p>
-      <p><%= @dossier.dateAcceptation%></p>
-      <p><%= @dossier.etatAvancement %></p>
-
-
+      <p> Objet de la mission : <%= @dossier.objetMission %></p>
+      <p> Nom du client : <%= @dossier.nomClient %></p>
+      <p> Localisation : <%= @dossier.localisation %></p>
+      <p> Proposition d'honoraire : <%= @dossier.propositionHonoraire %></p>
+      <p>Date d'acceptation : <%= @dossier.dateAcceptation%></p>
+      <% if @dossier.clotureDossier? %>
+        <p>Etat d'avancement du projet :<span class="badge bg-success me-2">Terminé</p>
+      <% else %>
+        <p>Etat d'avancement du projet :<span class="badge bg-danger me-2">En cours</span>
+          détails : <%= @dossier.etatAvancement %>
+      </p>
+      <% end %>
+      <p>Etapes de la facturation : <%= @dossier.etapeFacturation %></p>
+      <p>Date du réglement : <%= @dossier.dateReglement %></p>
+      <p>mode de réglement : <%= @dossier.modeReglement %></p>
     </div>
   </div>
 </div>
