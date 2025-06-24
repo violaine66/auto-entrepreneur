@@ -13,3 +13,27 @@
   text-align: end;
   font-size: 24px;
 }
+
+.facturation {
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  align-items: center;
+}
+
+.avancement-paiement {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+.avancement {
+  width: 50%;
+}
+
+.col a {
+  text-decoration: none;
+}

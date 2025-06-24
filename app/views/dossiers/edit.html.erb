@@ -11,14 +11,15 @@
                     label: "Date d'acceptation",
                     as: :string,
                     input_html: { data: { controller: "datepicker" } }%>
-        <%= d.input :etatAvancement, label: "Etat d'avancement"%>
-        <%= d.input :etapeFacturation, label: "Etape de la facturation"%>
-        <%= d.input :dateReglement, label: "Date du réglement" %>
+        <%= d.input :etatAvancement, as: :string, label: "Etat d'avancement"%>
+        <%= d.input :etapeFacturation, as: :string, label: "Etape de la facturation"%>
+        <%= d.input :dateReglement, as: :string,
+                    input_html: { data: { controller: "datepicker" } } %>
         <%= d.input :modeReglement, label: "Mode de réglement"%>
         <%= d.input :clotureDossier, as: :boolean, label: "Dossier clôturé", input_html: { class: "form-check-input" }%>
         <%= d.button :submit, "Mettre à jour le dossier", class: "btn btn-primary"%>
         <%= link_to "Annuler", dossiers_path %>
-        <% end %>0.
+        <% end %>
       </div>
 
     </div>
