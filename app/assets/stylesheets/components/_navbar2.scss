@@ -13,5 +13,19 @@
 
 #navbarSupportedContent{
     margin-right: 50px;
+}
 
+.btn-navbar {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #BFBEC5;
+  color: #F4F4F4;
+  border-radius: 8px;
+}
+
+.btn-navbar:hover {
+  color: #696773;
+  background-color: #F4F4F4;
+  border: 2px solid #BFBEC5;
 }

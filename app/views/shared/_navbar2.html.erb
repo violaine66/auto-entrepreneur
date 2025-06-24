@@ -12,11 +12,11 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active me-5">
-            <%= link_to "Dossiers", dossiers_path, class: "nav-link btn-valider" %>
+            <%= link_to "Dossiers", dossiers_path, class: "nav-link btn-navbar" %>
           </li>
 
           <li class="nav_item">
-            <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+            <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link btn-navbar" %>
           </li>
         <% else %>
           <li class="nav-item">
