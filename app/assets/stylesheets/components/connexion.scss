@@ -45,6 +45,28 @@
   color: #F4F4F4;
 }
 
+.menu-container {
+  width: 50%;
+  padding: 40px;
+  display:flex;
+  flex-direction: column;
+}
+
+.btn-menu {
+  padding: 20px;
+  font-size: 32px;
+  font-weight: bolder;
+  background-color: #B88A62;
+  color: #F4F4F4;
+  border-radius: 8px;
+}
+
+.btn-menu:hover {
+  color:#B88A62;
+  background-color: #F4F4F4;
+  border: 2px solid #B88A62;
+}
+
 @media (max-width: 768px) {
   .form-img-container {
     flex-direction: column;

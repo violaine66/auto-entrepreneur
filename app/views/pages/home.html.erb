@@ -1,8 +1,14 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col d-flex justify-content-center">
-      <p><%= link_to "Calculs", calculs_path, class:"me-5 text-decoration-none" %></p>
-      <p><%= link_to "Dossiers", dossiers_path, class:"text-decoration-none"%></p>
+<div class="connexion">
+  <div class="container" id="container-devise">
+    <div class="form-img-container d-flex justify-content-center">
+      <div class="img-container ">
+        <%= image_tag('table_dessin.avif')%>
+      </div>
+      <div class="menu-container d-flex-column justify-content-center align-items-center ">
+        <%= link_to "Calculs", calculs_path, class:"text-decoration-none btn-menu mb-5" %>
+        <%= link_to "Dossiers", dossiers_path, class:"text-decoration-none btn-menu"%>
     </div>
+
   </div>
+</div>
 </div>
