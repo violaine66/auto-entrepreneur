@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+*, h2 {
+   font-family: "Roboto", sans-serif;
+   font-optical-sizing: auto;
+   letter-spacing: 1px;
+}
