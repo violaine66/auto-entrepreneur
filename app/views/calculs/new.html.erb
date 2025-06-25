@@ -1,27 +1,40 @@
-<h2>Calcul pour une poutre <%= params[:type].capitalize %></h2>
+<%= render "shared/navbar2" %>
+<div class="edit-container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="new-dossier">
+          <h2 class="text-center mb-4">Calcul poutre <%= params[:type].capitalize %></h2>
 
-<%= form_with url: calculs_resultats_path, method: :get, local: true do %>
-  <%= hidden_field_tag :type, params[:type] %>
+          <%= form_with url: calculs_resultats_path, method: :get, local: true do %>
+            <%= hidden_field_tag :type, params[:type] %>
 
-  <div>
-    <%= label_tag :b, "Largeur b (m)" %>
-    <%= number_field_tag :b, nil, step: 0.1, required: true %>
+            <div class="mb-3">
+              <%= label_tag :b, "Largeur b (m)", class: "form-label" %>
+              <%= number_field_tag :b, nil, step: 0.1, required: true, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= label_tag :h, "Hauteur h (m)", class: "form-label" %>
+              <%= number_field_tag :h, nil, step: 0.1, required: true, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= label_tag :l, "Portée l (m)", class: "form-label" %>
+              <%= number_field_tag :l, nil, step: 0.1, required: true, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+              <%= label_tag :c, "Charge c (daN/m)", class: "form-label" %>
+              <%= number_field_tag :c, nil, step: 0.1, required: true, class: "form-control" %>
+            </div>
+
+            <div class="text-center">
+              <%= submit_tag "Calculer", class: "btn-add" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <%= label_tag :h, "Hauteur h (m)" %>
-    <%= number_field_tag :h, nil, step: 0.1, required: true %>
-  </div>
-
-  <div>
-    <%= label_tag :l, "Portée l (m)" %>
-    <%= number_field_tag :l, nil, step: 0.1, required: true %>
-  </div>
-
-  <div>
-    <%= label_tag :c, "Charge c (daN/m)" %>
-    <%= number_field_tag :c, nil, step: 0.1, required: true %>
-  </div>
-
-  <%= submit_tag "Calculer" %>
-<% end %>
+</div>
