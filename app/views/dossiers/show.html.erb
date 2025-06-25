@@ -8,7 +8,7 @@
             <% if @dossier.clotureDossier? %>
                     <span class="badge bg-success ms-2 fs-6"> Terminé </span>
               <% else %>
-                    <span class="badge bg-danger ms-2 fs-6"> En cours </span>
+                    <span class="badge bg-warning text-dark ms-2 fs-6"> En cours </span>
             <% end%>
           </p>
           <p class="client"><em>pour </em><strong><%= @dossier.nomClient %></strong></p>
