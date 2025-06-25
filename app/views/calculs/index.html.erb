@@ -1,10 +1,18 @@
 <%= render "shared/navbar2" %>
-<h1>Choisissez un type de poutre à calculer</h1>
+<div class="edit-container">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-8 d-flex justify-content-center align-items-center" style="height: calc(100vh - 91px);">
+        <ul class="calculs d-flex align-items-center justify-content-center">
+            <% @calculs.each do |calcul| %>
+            <li>
+              <%= link_to calcul[:name], new_calcul_path(type: calcul[:id]), class:" btn-calculs text-decoration-none" %>
+            </li>
+            <% end %>
 
-<ul>
-  <% @calculs.each do |calcul| %>
-    <li>
-      <%= link_to calcul[:name], new_calcul_path(type: calcul[:id]) %>
-    </li>
-  <% end %>
-</ul>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>

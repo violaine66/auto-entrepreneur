@@ -1,6 +1,6 @@
 <%= render "shared/navbar2" %>
 <div class="edit-container">
-  <div class="container">
+  <div class="container ">
     <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="new-dossier">
@@ -29,8 +29,9 @@
               <%= number_field_tag :c, nil, step: 0.1, required: true, class: "form-control" %>
             </div>
 
-            <div class="text-center">
-              <%= submit_tag "Calculer", class: "btn-add" %>
+            <div class="text-center d-flex justify-content-center">
+              <%= submit_tag "Calculer", class: " btn btn-navbar me-3" %>
+              <%= link_to "Annuler", calculs_path, class:" btn btn-navbar"%>
             </div>
           <% end %>
         </div>
