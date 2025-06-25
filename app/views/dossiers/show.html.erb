@@ -8,7 +8,7 @@
             <% if @dossier.clotureDossier? %>
                     <span class="badge bg-success ms-2 fs-6"> Terminé </span>
               <% else %>
-                    <span class="badge bg-warning text-dark ms-2 fs-6"> En cours </span>
+                    <span class="badge bg-warning ms-2 fs-6"> En cours </span>
             <% end%>
           </p>
           <p class="client"><em>pour </em><strong><%= @dossier.nomClient %></strong></p>
@@ -24,7 +24,7 @@
         <div class="avancement-paiement">
           <div class="avancement mt-3">
             <p><strong>Etat d'avancement du projet </strong>
-            <p><%= @dossier.etatAvancement %></p>
+            <p class="text-justify"><%= @dossier.etatAvancement %></p>
           </div>
             <div class="paiement mt-3">
               <% if @dossier.dateReglement.present?%>

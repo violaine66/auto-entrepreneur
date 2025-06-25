@@ -4,6 +4,7 @@
   height:100vh;
   display: flex;
   align-items: center;
+
 }
 
 .form-img-container {
@@ -13,13 +14,16 @@
   height: 500px; // ou `100%` si tu veux qu’il suive `.connexion`
   margin: 0;
   padding: 0;
+  border-radius: 6px;
+
 }
 
 #container-devise {
   background-color: #F4F4F4;
   width: 100%;
   max-width: 900px;
-  padding: 0; // enlever le padding ici !
+  padding: 0;
+  border-radius: 6px;
 }
 
 .img-container {
@@ -27,6 +31,7 @@
   height: 100%;
   padding: 0;
   margin: 0;
+
 }
 
 .img-container img {
@@ -34,6 +39,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 6px;
 }
 
 .form-container {
@@ -46,7 +52,12 @@
   color: #F4F4F4;
   border-radius: 6px;
 }
-
+.btn-valider:hover {
+  background-color:#F4F4F4;
+  color:  #B88A62;
+  border-radius: 6px;
+  border: 1px solid #B88A62;
+}
 .menu-container {
   width: 50%;
   padding: 40px;
