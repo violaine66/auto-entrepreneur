@@ -1,1 +1,10 @@
 <%= render "shared/navbar2" %>
+<h1>Choisissez un type de poutre à calculer</h1>
+
+<ul>
+  <% @calculs.each do |calcul| %>
+    <li>
+      <%= link_to calcul[:name], new_calcul_path(type: calcul[:id]) %>
+    </li>
+  <% end %>
+</ul>

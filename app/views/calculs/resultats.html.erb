@@ -1,0 +1,11 @@
+<h2>Résultat du calcul - Poutre <%= @type.capitalize %></h2>
+
+<% if @result.is_a?(String) %>
+  <p><strong><%= @result %></strong></p>
+<% else %>
+  <p><strong>Moment fléchissant M :</strong> <%= @m.round(2) %> daN.m</p>
+  <p><strong>Moment d'inertie IV :</strong> <%= @iv.round(2) %> cm³</p>
+  <p><strong>Résultat final (M / IV) :</strong> <%= @result.round(3) %></p>
+<% end %>
+
+<%= link_to "Revenir au choix", calculs_path %>
