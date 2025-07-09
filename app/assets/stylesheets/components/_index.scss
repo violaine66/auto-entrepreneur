@@ -59,17 +59,6 @@ ul > li{
 }
 
 @media (max-width: 1050px) {
-  .btn-calculs {
-    padding: 20px;
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 792px) {
-  .btn-calculs {
-    padding: 15px;
-    font-size: 20px;
-  }
 
   .calculs {
     flex-direction: column !important;
