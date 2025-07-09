@@ -70,6 +70,11 @@ ul > li{
     padding: 15px;
     font-size: 20px;
   }
+
+  .calculs {
+    flex-direction: column !important;
+    align-items: center;
+  }
 }
 
 .btn-calculs:hover {
