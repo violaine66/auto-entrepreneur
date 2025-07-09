@@ -7,7 +7,6 @@ class CalculsController < ApplicationController
   end
 
   def new
-
   end
 
   def resultats
