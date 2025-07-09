@@ -18,16 +18,15 @@ class CalculsController < ApplicationController
       h = params[:h].to_f
       l = params[:l].to_f
       c = params[:c].to_f
-      iv = (b * h**2) / 6
+
+      iv = (b * h**3) / 12  # <-- Correction ici
       m = (c * l**2) / 8
-      @result = iv.zero? ? "Division par zéro !" : m / iv
+
+      @result = iv.zero? ? "Division par zéro !" : (m / iv)*1000
       @iv = iv
       @m = m
     else
       @result = "Pas de calcul pour ce type de poutre"
     end
-
   end
-
-
 end

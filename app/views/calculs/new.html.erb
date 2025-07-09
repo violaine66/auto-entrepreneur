@@ -10,12 +10,12 @@
             <%= hidden_field_tag :type, params[:type] %>
 
             <div class="mb-3">
-              <%= label_tag :b, "Largeur b (m)", class: "form-label" %>
+              <%= label_tag :b, "Largeur b (cm)", class: "form-label" %>
               <%= number_field_tag :b, nil, step: 0.1, required: true, class: "form-control" %>
             </div>
 
             <div class="mb-3">
-              <%= label_tag :h, "Hauteur h (m)", class: "form-label" %>
+              <%= label_tag :h, "Hauteur h (cm)", class: "form-label" %>
               <%= number_field_tag :h, nil, step: 0.1, required: true, class: "form-control" %>
             </div>
 
