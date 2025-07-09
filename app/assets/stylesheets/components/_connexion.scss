@@ -80,6 +80,17 @@
   border: 2px solid #B88A62;
 }
 
+@media (max-width:785px) {
+  .form-img-container {
+    min-height: 650px;
+  }
+  .menu-container a {
+    display: flex;
+    flex-direction: column;
+    margin-left: 210px;
+  }
+}
+
 @media (max-width: 768px) {
   .form-img-container {
     flex-direction: column;
